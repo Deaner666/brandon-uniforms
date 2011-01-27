@@ -1,11 +1,9 @@
-1296124984
+1296125214
 Application	/home/dave/rails_apps/brandon-app/config/application.rb	  class Application 
 ApplicationController	/home/dave/rails_apps/brandon-app/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	/home/dave/rails_apps/brandon-app/app/helpers/application_helper.rb	module ApplicationHelper
 BrandonApp	/home/dave/rails_apps/brandon-app/config/application.rb	module BrandonApp
-BrowsingTest	/home/dave/rails_apps/brandon-app/test/performance/browsing_test.rb	class BrowsingTest 
 Str	/home/dave/rails_apps/brandon-app/public/javascripts/prototype.js	function Str(key, holder, stack)
-TestCase	/home/dave/rails_apps/brandon-app/test/test_helper.rb	class ActiveSupport::TestCase
 Type	/home/dave/rails_apps/brandon-app/public/javascripts/prototype.js	function Type(o)
 abs	/home/dave/rails_apps/brandon-app/public/javascripts/prototype.js	function abs()
 absolutize	/home/dave/rails_apps/brandon-app/public/javascripts/prototype.js	function absolutize(element)
@@ -161,7 +159,6 @@ sub	/home/dave/rails_apps/brandon-app/public/javascripts/prototype.js	function s
 subclass	/home/dave/rails_apps/brandon-app/public/javascripts/prototype.js	function subclass()
 succ	/home/dave/rails_apps/brandon-app/public/javascripts/prototype.js	function succ()
 succ	/home/dave/rails_apps/brandon-app/public/javascripts/prototype.js	function succ()
-test_homepage	/home/dave/rails_apps/brandon-app/test/performance/browsing_test.rb	  def test_homepage
 times	/home/dave/rails_apps/brandon-app/public/javascripts/prototype.js	function times(count)
 times	/home/dave/rails_apps/brandon-app/public/javascripts/prototype.js	function times(iterator, context)
 toArray	/home/dave/rails_apps/brandon-app/public/javascripts/prototype.js	function toArray()
