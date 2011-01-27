@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/fesplugas/typus.git
+  revision: 60335b3de16115b6f53872e37ca9770560cb4006
+  specs:
+    typus (3.0.4)
+      render_inheritable
+      will_paginate (~> 3.0.pre2)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -70,6 +78,8 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
+    render_inheritable (1.0.0)
+      rails (~> 3.0)
     rspec (2.3.0)
       rspec-core (~> 2.3.0)
       rspec-expectations (~> 2.3.0)
@@ -94,6 +104,7 @@ GEM
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
@@ -106,4 +117,5 @@ DEPENDENCIES
   rspec (= 2.3.0)
   rspec-rails (= 2.3.0)
   sqlite3-ruby
+  typus!
   webrat
