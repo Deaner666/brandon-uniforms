@@ -1,0 +1,59 @@
+/*
+Fluid Framework | basic.css
+This is the base stylesheet loaded by all devices capable of rendering CSS styles.
+Media:          screen, handheld.
+Screen width:   Any.
+Target devices: Feature phones 
+Notes: Devices with a screen width narrower than 320px or devices that don't recognise media queries, will get ONLY this stylesheet. This stylesheet doesn't set up the grid structure, meaning layout columns remain unstyled and stack on top of each other (which makes for a more comfortable layout on smaller devices).
+*/
+
+/*
+Framework styles for mobile
+*/
+
+/* Resets */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,q,small,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+	border: 0; margin: 0; padding: 0;
+}
+/* HTML 5 elements should display as block*/
+article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object { display: block; }
+a img { border: 0; }
+figure { position: relative; }
+figure img { width: 100%; }
+
+/* Create a base for our em based text and percentage widths to work off */
+body {
+/*font-size: 16px;*/
+line-height: 24px; /* This is our baseline grid value if we're using one */
+font: normal 100% Helvetica, Arial, sans-serif; /* Should set browser default font size to 16px */
+}
+
+/* A container for housing a row, which in turn houses our columns */
+.container { padding-left: 20px; padding-right: 20px; }
+
+/* The 1140px wide row, for constraining columns, although 1140px will increase as the user increases their text size (except in old IE browsers). A row should be nested within a "container" */
+.row {
+  width: 100%;
+  max-width: 71.25em; /* 1140px / 16px = 71.25em */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Images and embedded objects scale to the width of the column they are contained in */
+img, object, embed {
+	max-width: 100%;
+}
+
+/* Good ol' Clearfix */
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    }
+.clearfix {display: inline-block;}  /* for IE/Mac */
+
+/*
+Site specific styles for all devices
+*/

@@ -1,0 +1,49 @@
+/*
+Fluid Framework | desktop.css
+This stylesheet adds in styles for the full width, all singing, all dancing browsing experience. It sets up a 12 column layout grid that is fluid up to 1140px.
+Media:          screen, handheld.
+Screen width:   > 640px
+Target devices: Desktop computers, iPad and other tablets
+Notes: The grid consists of a "container" that is the width of the page. This container contains a "row" with a maximum width of 1140px. The row contains a number of columns who's widths must add up to 12 of the underlying grid-columns (a grid-column being 62px wide with a 36px gutter when full size). The last column in a row must be given a class of "last" to remove the right hand gutter. For example, a fluid, three column layout would be marked up as such:
+<div class="container">
+	<div class="row">
+		<div class="fourcol"></div>
+		<div class="fourcol"></div>
+		<div class="fourcol last"></div>
+	</div>
+</div>
+*/
+
+/*
+Framework styles for mobile
+*/
+
+/* For setting a background that is the width of the page */
+.container {
+	clear: both;
+}
+
+/* Don't give columns a border property as it screws up the percentages and makes some browsers barf during a resize and wrap columns across multiple rows */
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol {
+margin-right: 3.16%; /* 36px / 1140px = 3.16% */
+float: left;
+}
+.onecol { width: 5.244%; } /* 62px / 1140px = 5.44% */
+.twocol { width: 13.95%; } /* 160px / 1140px = 14.04% - reduced to 159px to fix column wrapping issue */
+.threecol { width: 22.63%; } /* 258px / 1140px = 22.63% */
+.fourcol { width: 31.23%; } /* 356px / 1140px = 31.23% */
+.fivecol { width: 39.82%; } /* 454px / 1140px = 39.82% */
+.sixcol { width: 48.42%; } /* 552px / 1140px = 48.42% */
+.sevencol { width: 57.02%; } /* 650px / 1140px = 57.02% */
+.eightcol { width: 65.61%; } /* 748px / 1140px = 65.61% */
+.ninecol { width: 74.21%; } /* 846px / 1140px = 74.21% */
+.tencol { width: 82.81%; } /* 944px / 1140px = 82.81% */
+.elevencol { width: 91.4%; } /* 1042px / 1140px = 91.4% */
+.twelvecol { width: 100%; float: left; }
+.last { margin-right: 0px; } /* Remove the right margin on the last column in a row, because it doesn't need a gutter */
+
+/*
+Site specific styles for the desktop
+*/
+
+.fancy-button { float: right; }

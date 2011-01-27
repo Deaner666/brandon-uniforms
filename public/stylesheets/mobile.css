@@ -1,0 +1,20 @@
+/*
+Fluid Framework | mobile.css
+This stylesheet should include styles that are specific to devices with a small screen, but that still have capable browsers.
+Media:          screen, handheld.
+Screen width:   320px - 640px
+Target devices: Smart phones, iPod Touch
+Notes: 
+*/
+
+/*
+Framework styles for mobile
+*/
+
+/*
+Site specific styles for mobile
+*/
+
+#terms-and-conditions, #contact-details { margin-top: 10px; }
+
+.fancy-button { margin-bottom: 24px; }

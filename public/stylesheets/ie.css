@@ -1,0 +1,13 @@
+/*
+Fluid Framework | ie.css
+Use this stylesheet for any patches required for Microsoft's excuse of a browser.
+Media:          screen.
+Screen width:   Any.
+Target devices: Anything utilising IE as a browser, including Windows Phone 7.
+Notes: 
+*/
+
+.clearfix {
+	zoom: 1;     /* triggers hasLayout */
+	display: block;     /* resets display for IE/Win */
+}
