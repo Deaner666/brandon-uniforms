@@ -22,6 +22,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
+gem 'fastercsv'
 gem 'formtastic', '~> 1.1.0'
 gem 'typus', :git => 'https://github.com/fesplugas/typus.git'
 
