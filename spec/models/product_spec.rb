@@ -17,7 +17,7 @@ describe Product do
     @product.should_not be_valid
   end
   
-  it "should require price to be a positive integer" do
+  it "should require price to be a positive integer (inc. 0)" do
     @product = Factory.build(:gold_blend_white, :price => "")
     @product.should_not be_valid
     @product = Factory.build(:gold_blend_white, :price => "1.50")
@@ -25,6 +25,8 @@ describe Product do
     @product = Factory.build(:gold_blend_white, :price => "-100")
     @product.should_not be_valid
     @product = Factory.build(:gold_blend_white, :price => "350")
+    @product.should be_valid
+    @product = Factory.build(:gold_blend_white, :price => "0")
     @product.should be_valid
   end
   

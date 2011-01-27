@@ -22,13 +22,16 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
-gem 'fastercsv'
 gem 'formtastic', '~> 1.1.0'
 gem 'typus', :git => 'https://github.com/fesplugas/typus.git'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
+group :production do
+  gem 'fastercsv'
+end
+
 group :development do
   gem 'rspec-rails', '2.3.0'
   gem 'annotate-models', '1.0.4'
