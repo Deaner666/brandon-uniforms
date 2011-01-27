@@ -13,6 +13,8 @@
 
 class Product < ActiveRecord::Base
   
+  has_and_belongs_to_many :orders
+  
   validates :name,       :presence => true
   validates :stock_code, :presence => true
   validates :price,      :presence => true,

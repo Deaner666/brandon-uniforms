@@ -28,4 +28,13 @@ describe Product do
     @product.should be_valid
   end
   
+  describe "Relationships" do
+
+    it "should respond to an orders method" do
+      @product = Factory(:gold_blend_white)
+      @product.should respond_to(:orders)
+    end    
+    
+  end
+  
 end

@@ -1,2 +1,10 @@
 <h1><%= @title %></h1>
 
+<%= semantic_form_for @order do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :branch, :hint => "Your Brandon branch reference",
+                         :required => true %>
+    <%= f.input :products, :as => :check_boxes %>
+  <% end %>
+  <%= f.buttons %>
+<% end %>

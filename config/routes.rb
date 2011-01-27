@@ -12,7 +12,11 @@ BrandonApp::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  resources :orders do
+    resources :products
+  end
+  resources :products
+  
   # Sample resource route with options:
   #   resources :products do
   #     member do
