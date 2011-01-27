@@ -1,4 +1,4 @@
-1296122971
+1296124984
 Application	/home/dave/rails_apps/brandon-app/config/application.rb	  class Application 
 ApplicationController	/home/dave/rails_apps/brandon-app/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	/home/dave/rails_apps/brandon-app/app/helpers/application_helper.rb	module ApplicationHelper
