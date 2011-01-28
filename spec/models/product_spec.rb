@@ -35,7 +35,12 @@ describe Product do
     it "should respond to an orders method" do
       @product = Factory(:gold_blend_white)
       @product.should respond_to(:orders)
-    end    
+    end
+    
+    it "should respond to a line_items method" do
+      @product = Factory(:gold_blend_white)
+      @product.should respond_to(:line_items)
+    end
     
   end
   

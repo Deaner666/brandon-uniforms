@@ -1,10 +1,19 @@
 <h1><%= @title %></h1>
 
 <%= semantic_form_for @order do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :branch, :hint => "Your Brandon branch reference",
+  <%= f.inputs :name => 'Branch Details' do %>
+    <%= f.input :branch, :label => "Branch Ref.",
                          :required => true %>
-    <%= f.input :products, :as => :check_boxes %>
+  <% end %>
+  <%= f.inputs :name => "Order details" do %>
+    <%= semantic_fields_for :line_items do |li| %>
+      <% for product in @products do %>
+        <%= product.name %>
+        <%= li.input :product_id, :as => :hidden, :value => product.id %>
+        <%= li.input :order_id, :as => :hidden, :value => @order.id %>
+        <%= li.input :quantity, :required => false %>
+      <% end %>
+    <% end %>
   <% end %>
   <%= f.buttons %>
 <% end %>
