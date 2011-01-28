@@ -1,0 +1,10 @@
+<h1><%= @title %></h1>
+
+<p>Branch ref.: <%= @order.branch %></p>
+
+<p>Order details</p>
+<ul>
+  <% for li in @order.line_items %>
+    <li><%= li.product.name %> x <%= li.quantity %></li>
+  <% end %>
+</ul>

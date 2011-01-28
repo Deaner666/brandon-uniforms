@@ -1,0 +1,20 @@
+<h1><%= @title %></h1>
+
+<%= form_for @order do |f| %>
+
+  <p>
+    <%= f.label :branch, "Branch Ref." %>
+    <%= f.text_field :branch %>
+  </p>
+  
+  <%= f.fields_for :line_items do |li| %>
+    <%= li.hidden_field :product_id %>
+    <p>
+      <%= li.label :quantity, "Quantity" %>
+      <%= li.text_field :quantity %>
+    </p>
+  <% end %>
+  
+  <p><%= f.submit "Create order" %></p>
+  
+<% end %>
