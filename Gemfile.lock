@@ -1,8 +1,8 @@
 GIT
-  remote: https://github.com/fesplugas/typus.git
-  revision: 60335b3de16115b6f53872e37ca9770560cb4006
+  remote: git://github.com/fesplugas/typus.git
+  revision: 44f2258bbae7ec2c8f839a65c64ac781f735d762
   specs:
-    typus (3.0.4)
+    typus (3.0.5)
       render_inheritable
       will_paginate (~> 3.0.pre2)
 
