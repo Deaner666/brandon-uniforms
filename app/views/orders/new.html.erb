@@ -1,20 +1,18 @@
 <h1><%= @title %></h1>
 
-<%= form_for @order do |f| %>
+<%= semantic_form_for @order do |f| %>
 
-  <p>
-    <%= f.label :branch, "Branch Ref." %>
-    <%= f.text_field :branch %>
-  </p>
-  
-  <%= f.fields_for :line_items do |li| %>
-    <%= li.hidden_field :product_id %>
-    <p>
-      <%= li.label :quantity, "Quantity" %>
-      <%= li.text_field :quantity %>
-    </p>
+  <%= f.inputs do %>
+    <%= f.input :branch, :label => "Branch Ref.",
+                         :required => true %>
   <% end %>
   
-  <p><%= f.submit "Create order" %></p>
+  <%= f.semantic_fields_for :line_items do |li| %>
+    debugger
+    <%= li.input :product_id, :as => :hidden %>
+    <%= li.input :quantity, :label => LineItem.where("id = ?", li.id).product.name %>
+  <% end %>
+  
+  <%= f.buttons %>
   
 <% end %>
