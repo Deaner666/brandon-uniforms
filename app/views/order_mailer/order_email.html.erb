@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>A Brandon Hire branch has placed a drinks order</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Drinkmaster - David Dean" />
+    <meta name="description" content="Brandon Hire ordering system" />
+  </head>
+  
+  <body>
+    
+    <p>Branch ref.: <%= @order.branch %></p>
+
+    <p>Order details</p>
+    <ul>
+      <% for li in @order.line_items %>
+      <li><%= li.quantity %> x <%= li.product.name %></li>
+      <% end %>
+    </ul>
+    
+  </body>
+  
+</html>

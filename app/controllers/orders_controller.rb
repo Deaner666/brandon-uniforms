@@ -39,4 +39,14 @@ class OrdersController < ApplicationController
     end
   end
   
+  def send_order
+    if params[:id]
+      @order = Order.find(params[:id])
+      OrderMailer.order_email(@order).deliver
+      redirect_to(new_order_path, :notice => "Order was sent successfully.")
+    else
+      redirect_to(new_order_path, :error => "We're sorry, something went wrong.")
+    end
+  end
+  
 end

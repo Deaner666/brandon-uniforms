@@ -13,8 +13,9 @@ BrandonApp::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :orders do
-    resources :products
+    resources :products    
   end
+  match '/orders/:id/send' => 'orders#send_order', :as => :send
   resources :products
   
   # Sample resource route with options:

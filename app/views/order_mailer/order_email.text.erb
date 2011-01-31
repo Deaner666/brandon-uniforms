@@ -1,0 +1,6 @@
+Brandon Hire Branch ref.: <%= @order.branch %>
+
+Order details
+<% for li in @order.line_items %>
+  <%= li.quantity %> x <%= li.product.name %>
+<% end %>

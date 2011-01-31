@@ -5,6 +5,10 @@
 <p>Order details</p>
 <ul>
   <% for li in @order.line_items %>
-  <li><%= li.quantity %> x <%= li.product.name %></li>
+    <li><%= li.quantity %> x <%= li.product.name %></li>
   <% end %>
 </ul>
+
+<%= button_to "Confirm and send order",
+              send_path(:id => @order.id),
+              :method => :post %>
