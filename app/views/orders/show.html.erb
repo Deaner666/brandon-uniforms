@@ -5,6 +5,6 @@
 <p>Order details</p>
 <ul>
   <% for li in @order.line_items %>
-    <li><%= li.product.name %> x <%= li.quantity %></li>
+  <li><%= li.quantity %> x <%= li.product.name %></li>
   <% end %>
 </ul>
