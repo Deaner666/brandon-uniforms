@@ -79,33 +79,17 @@ body { background: #ebebeb; }
 Page Specific Styles
 */
 
-/* For styling a loadout or item list entry */
-article.list-entry {
-	clear: both; width:100%; font-size: 0.85em;
-	background: #de4337; color: #fff;
-	border-radius: 20px; -moz-border-radius: 20px;
-	-webkit-border-radius: 20px; -khtml-border-radius: 20px;
-	margin-bottom: 24px;
-}
-article.list-entry .details {
-	float: left; width: 86%; margin-top: 12px; margin-bottom: 12px; margin-left: 2%;
-}
-article.list-entry header {  }
-article.list-entry footer {  }
-article.list-entry aside {
-	padding-bottom: 12px; margin-top: 12px; padding-left: 2%; margin-right: 2%; float: right;
-	border-left: 1px solid #e88a83; width: 7%; text-align: right;
-}
-article.list-entry h1 { display: inline; color: #fff; }
-article.list-entry h2 {
-	font-style: italic;
-	margin-bottom: 6px; /* Overrides typography.css but maintains baseline grid */
-}
-article.list-entry a { color: #fff; text-decoration: none; }
+/* For styling the Formtastic new order form */
+form.formtastic input.branch { width: 150px; }
+form.formtastic input.quantity { width: 30px; }
+form.formtastic fieldset > ol > li label { display:block; width:50%; float:left; padding-top:.2em; }
+form.formtastic p.qty-label { margin-left: 50%; margin-bottom: 6px; }
+form.formtastic fieldset.buttons { padding-left:50%; }
 
 /*
 Miscellaneous Styles
 */
+
 .highlight { color: #ffd92a; }
 
 .fancy-button {

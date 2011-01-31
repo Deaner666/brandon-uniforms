@@ -4,13 +4,18 @@
 
   <%= f.inputs do %>
     <%= f.input :branch, :label => "Branch Ref.",
-                         :required => true %>
+                         :required => true,
+                         :input_html => { :class => "branch" }%>
   <% end %>
   
+  <p class="qty-label">Quantity</p>
   <%= f.semantic_fields_for :line_items do |li| %>
-    debugger
-    <%= li.input :product_id, :as => :hidden %>
-    <%= li.input :quantity, :label => LineItem.where("id = ?", li.id).product.name %>
+    <%= f.inputs do %>
+      <%= li.input :product_id, :as => :hidden %>
+      <%= li.input :quantity, :required => true,
+                              :label => li.object.product_name,
+                              :input_html => { :class => "quantity" }%>
+    <% end %>
   <% end %>
   
   <%= f.buttons %>
