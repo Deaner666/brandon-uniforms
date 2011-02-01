@@ -101,6 +101,7 @@ form.formtastic p.qty-label { margin-left: 50%; margin-bottom: 6px; }
 form.formtastic fieldset.buttons { padding-left:50%; }
 form.formtastic fieldset > ol > li p.inline-errors { margin:0.5em 0 0 50%; }
 form.formtastic fieldset > ol > li ul.errors { margin:0.5em 0 0 50%; }
+form.formtastic .price { float: right; }
 
 /*
 Miscellaneous Styles

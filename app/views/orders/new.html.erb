@@ -5,16 +5,17 @@
   <%= f.inputs do %>
     <%= f.input :branch, :label => "Branch Ref.",
                          :required => true,
-                         :input_html => { :class => "branch" }%>
+                         :input_html => { :class => "branch" } %>
   <% end %>
   
   <p class="qty-label">Quantity</p>
   <%= f.semantic_fields_for :line_items do |li| %>
     <%= f.inputs do %>
+      <div class="price"><%= format_price(li.object.product.price) %></div>
       <%= li.input :product_id, :as => :hidden %>
       <%= li.input :quantity, :required => true,
                               :label => li.object.product_name,
-                              :input_html => { :class => "quantity" }%>
+                              :input_html => { :class => "quantity" } %>
     <% end %>
   <% end %>
   

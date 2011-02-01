@@ -24,4 +24,9 @@ class LineItem < ActiveRecord::Base
                          :allow_blank => true
                        }
   
+  # Find the total cost of a line_item
+  def total
+    self.product.price * self.quantity
+  end
+  
 end

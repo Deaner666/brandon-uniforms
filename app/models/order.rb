@@ -19,4 +19,9 @@ class Order < ActiveRecord::Base
   
   validates :branch, :presence => true
   
+  # Find the total cost of an order by summing the cost of its line_items
+  def total
+    self.line_items.inject(0) {|x, li| x + li.total }
+  end
+  
 end

@@ -11,4 +11,18 @@ module ApplicationHelper
     @title ? @title.downcase : nil
   end
   
+  # Helper to format prices (stored in pence), as £pounds.pence in views.
+  def format_price(amount)
+    amount = amount.round
+    pounds, pence = amount.divmod(100)
+    raw sprintf("&pound;%d.%02d", pounds, pence)
+  end
+  
+  # Helper to format prices (stored in pence), as pounds.pence (no £ symbol) for passing to forms
+  def format_price_simple(amount)
+  	amount = amount.round
+    pounds, pence = amount.divmod(100)
+    raw sprintf("%d.%02d", pounds, pence)
+  end
+  
 end

@@ -12,17 +12,24 @@
     
     <h1>A Brandon Hire branch has placed a drinks order</h1>
     
-    <p>Please take a look and check if this order is OK to be fulfilled by Drinkmaster</p>
-    <p>If it is approved, please forward this email to <%= mail_to "sales@drinkmaster.co.uk", "sales@drinkmaster.co.uk" %></p>
+    <p><strong>Please take a look and check if this order is OK to be fulfilled by Drinkmaster.</strong></p>
+    <p style="color:f00;">If it is approved, please forward this email to <%= mail_to "sales@drinkmaster.co.uk", "sales@drinkmaster.co.uk" %>.</p>
     
+    <h2>Branch details</h2>
     <p>Branch ref: <%= @order.branch %></p>
 
-    <p>Order details</p>
+    <h2>Order details</h2>
     <ul>
       <% for li in @order.line_items %>
-      <li><%= li.quantity %> x <%= li.product.name %></li>
+        <li>
+          <%= li.quantity %> x
+          <%= li.product.name %> @
+          <%= raw format_price(li.product.price) %> each =
+          <%= raw format_price(li.total) %>
+        </li>
       <% end %>
     </ul>
+    <p><strong>Order Total: <%= format_price(@order.total) %></strong></p>
     
   </body>
   

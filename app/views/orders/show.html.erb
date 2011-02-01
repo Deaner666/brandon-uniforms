@@ -1,13 +1,20 @@
 <h1><%= @title %></h1>
 
+<h2>Branch details</h2>
 <p>Branch ref: <%= @order.branch %></p>
 
-<p>Order details</p>
+<h2>Order details</h2>
 <ul>
   <% for li in @order.line_items %>
-    <li><%= li.quantity %> x <%= li.product.name %></li>
+    <li>
+      <%= li.quantity %> x
+      <%= li.product.name %> @
+      <%= raw format_price(li.product.price) %> each =
+      <%= raw format_price(li.total) %>
+    </li>
   <% end %>
 </ul>
+<p><strong>Order Total: <%= format_price(@order.total) %></strong></p>
 
 <%= button_to "Confirm and send order",
               send_path(:id => @order.id),

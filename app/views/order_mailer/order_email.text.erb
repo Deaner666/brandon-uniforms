@@ -1,6 +1,23 @@
+-----------------------------------------------
+A Brandon Hire branch has placed a drinks order
+-----------------------------------------------
+
+Please take a look and check if this order is OK to be fulfilled by Drinkmaster.
+
+If it is approved, please forward this email to <%= mail_to "sales@drinkmaster.co.uk", "sales@drinkmaster.co.uk" %>.
+
+--------------
+Branch details
+--------------
+
 Brandon Hire Branch ref.: <%= @order.branch %>
 
+-------------
 Order details
+-------------
+
 <% for li in @order.line_items %>
-  <%= li.quantity %> x <%= li.product.name %>
+  <%= li.quantity %> x <%= li.product.name %> @ <%= raw format_price(li.product.price) %> each = <%= raw format_price(li.total) %>
 <% end %>
+
+Order Total: <%= format_price(@order.total) %>
