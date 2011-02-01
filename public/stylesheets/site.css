@@ -104,6 +104,8 @@ form.formtastic fieldset > ol > li p.inline-errors { margin:0.5em 0 0 50%; }
 form.formtastic fieldset > ol > li ul.errors { margin:0.5em 0 0 50%; }
 form.formtastic .price { float: right; }
 
+form.button_to { margin-bottom: 24px; }
+
 /*
 Miscellaneous Styles
 */
