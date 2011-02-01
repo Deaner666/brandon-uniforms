@@ -16,7 +16,10 @@ BrandonApp::Application.routes.draw do
     resources :products    
   end
   match '/orders/:id/send' => 'orders#send_order', :as => :send
+  
   resources :products
+  
+  get 'pages/contact_us', :as => :contact
   
   # Sample resource route with options:
   #   resources :products do

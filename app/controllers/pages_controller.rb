@@ -1,11 +1,7 @@
 class PagesController < ApplicationController
   
-  def index
-    
-  end
-  
-  def order_summary
-    
+  def contact_us
+    @title = "Contact us"
   end
   
 end
