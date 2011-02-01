@@ -82,6 +82,13 @@ body { background: #ebebeb; }
 	-webkit-border-radius: 5px; -khtml-border-radius: 5px;
 }
 
+#alert {
+  background: #ff9b9b; border: 1px solid #aa3b3b;
+  margin-bottom: 12px; padding: 6px;
+  border-radius: 5px; -moz-border-radius: 5px;
+	-webkit-border-radius: 5px; -khtml-border-radius: 5px;
+}
+
 /*
 Page Specific Styles
 */
