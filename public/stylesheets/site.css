@@ -64,7 +64,8 @@ body { background: #ebebeb; }
 	border-radius: 20px; -moz-border-radius: 20px;
 	-webkit-border-radius: 20px; -khtml-border-radius: 20px;
 }
-#sidebar p { margin-left: 15px; margin-right: 15px; }
+#sidebar p, #sidebar h1 { margin-left: 15px; margin-right: 15px; }
+#sidebar h1 { font-size: 20px; }
 
 /* The page footer */
 #page-footer {
