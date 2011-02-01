@@ -75,6 +75,13 @@ body { background: #ebebeb; }
 #page-footer ul { font-size: 0.85em; }
 #page-footer a { color: #de4337; }
 
+#notice {
+  background: #d9f7cd; border: 1px solid #54a36b;
+  margin-bottom: 12px; padding: 6px;
+  border-radius: 5px; -moz-border-radius: 5px;
+	-webkit-border-radius: 5px; -khtml-border-radius: 5px;
+}
+
 /*
 Page Specific Styles
 */
