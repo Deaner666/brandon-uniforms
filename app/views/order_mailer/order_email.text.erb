@@ -17,7 +17,7 @@ Order details
 -------------
 
 <% for li in @order.line_items %>
-  <%= li.quantity %> x <%= li.product.name %> @ <%= raw format_price(li.product.price) %> each = <%= raw format_price(li.total) %>
+<%= li.quantity %> x <%= li.product.name %> @ £<%= (li.product.price / 100).round(2) %> each = £<%= (li.total / 100).round(2) %>
 <% end %>
 
-Order Total: <%= format_price(@order.total) %>
+Order Total: £<%= (@order.total / 100).round(2) %>

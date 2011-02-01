@@ -1,5 +1,5 @@
-class OrdersController < ApplicationController
-
+class OrdersController < ApplicationController  
+  
   # GET /orders/1
   # GET /orders/1.xml
   def show

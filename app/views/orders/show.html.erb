@@ -9,8 +9,8 @@
     <li>
       <%= li.quantity %> x
       <%= li.product.name %> @
-      <%= raw format_price(li.product.price) %> each =
-      <%= raw format_price(li.total) %>
+      <%= format_price(li.product.price) %> each =
+      <%= format_price(li.total) %>
     </li>
   <% end %>
 </ul>
