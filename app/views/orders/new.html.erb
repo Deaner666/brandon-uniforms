@@ -5,7 +5,12 @@
   <%= f.inputs do %>
     <%= f.input :branch, :label => "Branch Ref.",
                          :required => true,
+                         :hint => "Your branch reference number",
                          :input_html => { :class => "branch" } %>
+   <%= f.input :contact, :label => "Contact name",
+                         :required => true,
+                         :hint => "Your name, in case we need to contact you",
+                         :input_html => { :class => "contact" } %>
   <% end %>
   
   <p class="qty-label">Quantity</p>
@@ -13,7 +18,7 @@
     <%= f.inputs do %>
       <div class="price"><%= format_price(li.object.product.price) %></div>
       <%= li.input :product_id, :as => :hidden %>
-      <%= li.input :quantity, :required => true,
+      <%= li.input :quantity, :required => false,
                               :label => li.object.product_name,
                               :input_html => { :class => "quantity" } %>
     <% end %>

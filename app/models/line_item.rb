@@ -1,14 +1,15 @@
 # == Schema Information
-# Schema version: 20110127152334
+# Schema version: 20110201220504
 #
 # Table name: line_items
 #
-#  id         :integer         not null, primary key
-#  order_id   :integer
-#  product_id :integer
-#  quantity   :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id           :integer         not null, primary key
+#  order_id     :integer
+#  product_id   :integer
+#  quantity     :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#  product_name :string(255)
 #
 
 class LineItem < ActiveRecord::Base
