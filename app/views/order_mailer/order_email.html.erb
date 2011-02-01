@@ -24,15 +24,15 @@
         <li>
           <%= li.quantity %> x
           <%= li.product.name %> @
-          &pound;<%= (li.product.price / 100).round(2) %> each =
-          &pound;<%= (li.total / 100).round(2) %>
+          &pound;<%= (li.product.price / 100).round %> each =
+          &pound;<%= (li.total / 100).round %>
         </li>
         amount = amount.round
     pounds, pence = amount.divmod(100)
     raw sprintf("&pound;%d.%02d", pounds, pence)
       <% end %>
     </ul>
-    <p><strong>Order Total: &pound;<%= (@order.total / 100).round(2) %></strong></p>
+    <p><strong>Order Total: &pound;<%= (@order.total / 100).round %></strong></p>
     
   </body>
   

@@ -17,7 +17,7 @@ Order details
 -------------
 
 <% for li in @order.line_items %>
-<%= li.quantity %> x <%= li.product.name %> @ £<%= (li.product.price / 100).round(2) %> each = £<%= (li.total / 100).round(2) %>
+<%= li.quantity %> x <%= li.product.name %> @ £<%= (li.product.price / 100).round %> each = £<%= (li.total / 100).round %>
 <% end %>
 
-Order Total: £<%= (@order.total / 100).round(2) %>
+Order Total: £<%= (@order.total / 100).round %>
