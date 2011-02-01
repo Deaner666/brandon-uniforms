@@ -17,7 +17,7 @@ Order details
 -------------
 
 <% for li in @order.line_items %>
-<%= li.quantity %> x <%= li.product.name %> @ £<%= sprintf("%.2f", li.product.price / 100) %> each = £<%= sprintf("%.2f", li.total / 100) %>
+<%= li.quantity %> x <%= li.product.name %> @ £<%= sprintf("%d.%02d", li.product.price.divmod(100)) %> each = £<%= sprintf("%d.%02d", li.total.divmod(100)) %>
 <% end %>
 
-Order Total: £<%= sprintf("%.2f", @order.total / 100) %>
+Order Total: £<%= sprintf("%d.%02d", @order.total.divmod(100)) %>
