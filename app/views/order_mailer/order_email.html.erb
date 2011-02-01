@@ -24,12 +24,12 @@
         <li>
           <%= li.quantity %> x
           <%= li.product.name %> @
-          &pound;<%= sprintf("%d.%02d", li.product.price.divmod(100)) %> each =
-          &pound;<%= sprintf("%d.%02d", li.total.divmod(100)) %>
+          &pound;<%= sprintf("%d.%02d", li.product.price.to_f / 100) %> each =
+          &pound;<%= sprintf("%d.%02d", li.total.to_f / 100) %>
         </li>
       <% end %>
     </ul>
-    <p><strong>Order Total: &pound;<%= sprintf("%d.%02d", @order.total.divmod(100)) %></strong></p>
+    <p><strong>Order Total: &pound;<%= sprintf("%d.%02d", @order.total.to_f / 100) %></strong></p>
     
   </body>
   
