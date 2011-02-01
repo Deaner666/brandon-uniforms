@@ -99,6 +99,8 @@ form.formtastic input.quantity { width: 30px; }
 form.formtastic fieldset > ol > li label { display:block; width:50%; float:left; padding-top:.2em; }
 form.formtastic p.qty-label { margin-left: 50%; margin-bottom: 6px; }
 form.formtastic fieldset.buttons { padding-left:50%; }
+form.formtastic fieldset > ol > li p.inline-errors { margin:0.5em 0 0 50%; }
+form.formtastic fieldset > ol > li ul.errors { margin:0.5em 0 0 50%; }
 
 /*
 Miscellaneous Styles
