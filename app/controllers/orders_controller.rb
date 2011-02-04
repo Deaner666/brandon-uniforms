@@ -33,8 +33,14 @@ class OrdersController < ApplicationController
                                   :notice => "Order was successfully created.") }
         format.xml { render :xml => @order, :status => :created, :location => @order }
       else
+        ids = []
+        for li in @order.line_items do
+          ids << li.product_id
+        end
         for product in Product.all
-          @order.line_items.build(:product_id => product.id, :product_name => Product.find(product.id).name)
+          unless ids.include?(product.id)
+            @order.line_items.build(:product_id => product.id, :product_name => Product.find(product.id).name)
+          end
         end
         flash.now[:alert] = "There was a problem with your order."
         format.html { render :action => "new" }
