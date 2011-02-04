@@ -3,9 +3,9 @@
 <%= semantic_form_for @order do |f| %>
 
   <%= f.inputs do %>
-    <%= f.input :branch, :label => "Branch Ref.",
+    <%= f.input :branch, :label => "Cost Centre",
                          :required => true,
-                         :hint => "Your branch reference number",
+                         :hint => "Your branch \"Cost Centre\" reference number",
                          :input_html => { :class => "branch" } %>
    <%= f.input :contact, :label => "Contact name",
                          :required => true,
