@@ -22,7 +22,7 @@
       <div class="price"><%= format_price(li.object.product.price) %></div>
       <%= li.input :product_id, :as => :hidden %>
       <%= li.input :quantity, :required => false,
-                              :label => li.object.product_name,
+                              :label => li.object.product.stock_code + "&nbsp;" + li.object.product_name,
                               :input_html => { :class => "quantity" } %>
     <% end %>
   <% end %>
