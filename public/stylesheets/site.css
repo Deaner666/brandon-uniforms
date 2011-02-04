@@ -112,7 +112,11 @@ form.button_to { margin-bottom: 24px; }
 Miscellaneous Styles
 */
 
-.highlight { color: #ffd92a; }
+.highlight {
+  background: #ffefa5; padding: 5px; border: 1px solid #ffd92a;
+  border-radius: 5px; -moz-border-radius: 5px;
+	-webkit-border-radius: 5px; -khtml-border-radius: 5px;
+}
 
 .fancy-button {
 	width: 200px; height: 48px; background: #008A29; color: #fff;
