@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.xml
   def new
-    @title = "Order Drinks"
+    @title = "Order Uniforms"
     @order = Order.new
     for product in Product.all
       @order.line_items.build(:product_id => product.id, :product_name => Product.find(product.id).name)

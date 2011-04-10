@@ -4,8 +4,8 @@
   <head>
     <title><%= global_title %></title>
     <meta charset="utf-8">
-    <meta name="author" content="Drinkmaster - David Dean" />
-    <meta name="description" content="Brandon Hire ordering system" />
+    <meta name="author" content="David Dean" />
+    <meta name="description" content="Brandon Hire uniform ordering system" />
     <meta name="keywords" content="" />
     <!-- <link rel="shortcut icon" href="/images/favicon.png" type="image/gif" /> -->
     <!-- <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" /> -->
@@ -41,7 +41,7 @@
     <header id="masthead" class="container">
       <div class="row">
         <div class="twelvecol">
-          <h1>Brandon Hire: Order Drinks</h1>
+          <h1>Brandon Hire: Order Uniforms</h1>
         </div>
       </div>
     </header>
@@ -50,7 +50,7 @@
     <nav id="main-nav" class="container">
       <div class="row">
         <ul>
-          <li><%= link_to "Order your drinks", root_path %> |</li>
+          <li><%= link_to "Order your uniforms", root_path %> |</li>
           <li><%= link_to "Contact us", contact_path %></li>
         </ul>
       </div>
@@ -71,8 +71,8 @@
         
         <aside id="sidebar" class="fourcol last">
           <h1>Welcome...</h1>
-          <p>Please use these pages to order your Drinkmaster drinks.</p>
-          <p>Please note, all orders are passed to head office for authorisation.</p>
+          <p>Please use these pages to order your uniforms.</p>
+          <p>Please note, all orders are passed to Brandon Hire head office for authorisation.</p>
         </aside>
       </div>
     </section>
@@ -80,15 +80,16 @@
     <footer id="page-footer" class="container">
       <div class="row">
         <section id="copyright-info" class="fourcol">
-          <header>Copyright &copy; <%= Date.today.year %> Drinkmaster Ltd.</header>
-          <p><%= link_to "www.drinkmaster.co.uk", "http://www.drinkmaster.co.uk" %></p>
+          <header>Copyright &copy; <%= Date.today.year %> Monsoon Marketing Ltd.</header>
+          <p><%= link_to "www.monsoonmarketing.co.uk", "http://www.monsoonmarketing.co.uk" %></p>
         </section>
         <section id="terms-and-conditions" class="fourcol">
-          <p>Terms and Conditions</p>
+          <header>Website designed by</header>
+          <p><%= link_to "www.moortor-design.co.uk", "http://www.moortor-design.co.uk" %></p>
         </section>
         <section id="contact-details" class="fourcol last">
           <header>Contact Us</header>
-          <p><%= mail_to "info@drinkmaster.co.uk", "info@drinkmaster.co.uk" %></p>
+          <p><%= mail_to "info@monsoonmarketing.co.uk", "info@monsoonmarketing.co.uk" %></p>
         </section>
       </div>
     </footer>
