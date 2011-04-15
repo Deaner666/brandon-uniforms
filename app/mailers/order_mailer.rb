@@ -2,10 +2,9 @@ class OrderMailer < ActionMailer::Base
   
   def order_email(order)
     @order = order
-    mail(:from => "ddean@drinkmaster.co.uk",
-         :to => "stationery@brandonhire.co.uk",
-         :bcc => "lambcam@drinkmaster.co.uk, sales@drinkmaster.co.uk",
-         :subject => "A drinks order has been placed by a Brandon Hire branch")
+    mail(:from => "info@monsoonmarketing.co.uk",
+         :to => "mail@dave-dean.co.uk",
+         :subject => "An order for uniforms has been placed by a Brandon Hire branch")
   end
   
 end
