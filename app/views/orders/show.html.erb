@@ -7,12 +7,14 @@
 <h2>Order details</h2>
 <ul>
   <% for li in @order.line_items %>
-    <li>
-      <%= li.quantity %> x
-      <%= li.product.name %> @
-      <%= format_price(li.product.price) %> each =
-      <%= format_price(li.total) %>
-    </li>
+    <% unless li.quantity == 0 %>
+      <li>
+        <%= li.quantity %> x
+        <%= li.product.name %> @
+        <%= format_price(li.product.price) %> each =
+        <%= format_price(li.total) %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 <p><strong>Order Total: <%= format_price(@order.total) %></strong></p>

@@ -50,7 +50,17 @@ class OrdersController < ApplicationController
   end
   
   def edit
+    @title = "Amend Order"
     @order = Order.find(params[:id])
+    ids = []
+    for li in @order.line_items do
+      ids << li.product_id
+    end
+    for product in Product.all
+      unless ids.include?(product.id)
+        @order.line_items.build(:product_id => product.id, :product_name => Product.find(product.id).name)
+      end
+    end
   end
   
   def update
