@@ -17,7 +17,7 @@ describe LineItem do
     @li.should_not be_valid
   end
   
-  it "should require quantity to be a positive integer" do
+  it "should require quantity to be an integer" do
     @li = Factory.build(:line_item, :quantity => "")
     @li.should_not be_valid
     @li = Factory.build(:line_item, :quantity => "1.50")
