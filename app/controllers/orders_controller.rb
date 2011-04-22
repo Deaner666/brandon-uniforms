@@ -49,6 +49,23 @@ class OrdersController < ApplicationController
     end
   end
   
+  def edit
+    @order = Order.find(params[:id])
+  end
+  
+  def update
+    @order = Order.find(params[:id])
+    respond_to do |format|
+      if @order.update_attributes(params[:order])
+        format.html { redirect_to(order_path(@order), :notice => 'Order was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
   def send_order
     if params[:id]
       @order = Order.find(params[:id])

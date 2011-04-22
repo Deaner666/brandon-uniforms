@@ -20,3 +20,5 @@
 <%= button_to "Confirm and send order",
               send_path(:id => @order.id),
               :method => :post %>
+              
+<%= button_to "Amend order", edit_order_path(@order), :method => :get %>

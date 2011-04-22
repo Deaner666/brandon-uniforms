@@ -1,30 +1,3 @@
 <h1><%= @title %></h1>
 
-<%= semantic_form_for @order do |f| %>
-
-  <%= f.inputs do %>
-    <%= f.input :branch, :label => "Cost Centre",
-                         :required => true,
-                         :hint => "Your branch \"Cost Centre\" reference number",
-                         :input_html => { :class => "branch" } %>
-   <%= f.input :contact, :label => "Contact name",
-                         :required => true,
-                         :hint => "Your name, in case we need to contact you",
-                         :input_html => { :class => "contact" } %>
-  <% end %>
-  
-  <p class="qty-label">Quantity</p>
-  
-  <%= f.semantic_fields_for :line_items do |li| %>
-    <%= f.inputs do %>
-      <div class="price"><%= format_price(li.object.product.price) %></div>
-      <%= li.input :product_id, :as => :hidden %>
-      <%= li.input :quantity, :required => false,
-                              :label => "#{li.object.product.stock_code} #{li.object.product.name}",
-                              :input_html => { :class => "quantity" } %>
-    <% end %>
-  <% end %>
-  
-  <%= f.buttons %>
-  
-<% end %>
+<%= render 'form' %>
