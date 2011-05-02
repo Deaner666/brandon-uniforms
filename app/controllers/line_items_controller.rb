@@ -15,7 +15,7 @@ class LineItemsController < ApplicationController
         format.html { redirect_to(root_path, :notice => @li.product.name + ' was successfully added.') }
         format.xml  { render :xml => @li, :status => :created, :location => @li }
       else
-        format.html { redirect_to(root_path, :error => "There was a problem adding " + @li.product.name + " to your order.") }
+        format.html { redirect_to(root_path, :alert => "There was a problem adding " + @li.product.name + " to your order.") }
         format.xml  { render :xml => @li.errors, :status => :unprocessable_entity }
       end
     end
@@ -33,7 +33,7 @@ class LineItemsController < ApplicationController
         format.html { redirect_to(root_path, :notice => 'Order was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { redirect_to(root_path, :error => 'Sorry, there was a problem updating your order.') }
+        format.html { redirect_to(root_path, :alert => 'Sorry, there was a problem updating your order.') }
         format.xml  { render :xml => @li.errors, :status => :unprocessable_entity }
       end
     end
