@@ -27,7 +27,7 @@ class LineItem < ActiveRecord::Base
   
   # Find the total cost of a line_item
   def total
-    self.product.price * self.quantity
+    self.quantity != nil ? self.product.price * self.quantity : 0
   end
   
 end
