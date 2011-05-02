@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
     @title = "Order Uniforms"
     @order = Order.new
     for product in Product.all
-      @order.line_items.build(:product_id => product.id, :product_name => Product.find(product.id).name)
+      @order.line_items.build(:product_id => product.id, :product_name => product.name)
     end
 
     respond_to do |format|
