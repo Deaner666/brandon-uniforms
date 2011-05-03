@@ -20,6 +20,7 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="/stylesheets/formtastic.css" media="screen, handheld" />
+    <link rel="stylesheet" href="/stylesheets/css3buttons/css3-github-buttons.css" media="screen, handheld" />
     <link rel="stylesheet" href="/stylesheets/typography.css" media="screen, handheld" />
     <link rel="stylesheet" href="/stylesheets/site.css" media="screen, handheld" />
     <%= javascript_include_tag :defaults %>
@@ -85,7 +86,10 @@
               <% end %>
             </ul>
             <p><strong>Order Total: <%= format_price(@order.total) %></strong></p>
-            <%= button_to "Reset your order", order_path(@order), :method => :delete %>
+            <%= button_group do %>
+              <%= edit_pill_button_link_to "Edit your order", edit_order_path(@order) %>
+              <%= negative_trash_pill_button_link_to "Reset your order", order_path(@order), :method => :delete %>
+            <% end %>
           </section>
           
           <section id="instructions">
