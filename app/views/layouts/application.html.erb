@@ -90,7 +90,9 @@
               <%= primary_approve_pill_button_link_to "Confirm order", order_path(@order) %>
               <%= edit_pill_button_link_to "Edit order", edit_order_path(@order) %>
             <% end %>
-            <%= negative_trash_pill_button_link_to "Reset order", order_path(@order), :method => :delete %>
+            <div class="extra-buttons">
+              <%= negative_trash_pill_button_link_to "Reset order", order_path(@order), :method => :delete %>
+            </div>
           </section>
           
           <section id="instructions">
