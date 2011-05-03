@@ -76,7 +76,7 @@
             <ul>
               <% for li in @order.line_items %>
                 <% if li.quantity != 0 && li.quantity != nil %>
-                  <li>
+                  <li class="<%= cycle('even', 'odd') %>">
                     <%= li.quantity %> x
                     <%= li.product.name %> -
                     <%= format_price(li.total) %>
@@ -85,7 +85,7 @@
               <% end %>
             </ul>
             <p><strong>Order Total: <%= format_price(@order.total) %></strong></p>
-            <p><%= link_to "Reset your order", order_path(@order), :method => :delete %></p>
+            <%= button_to "Reset your order", order_path(@order), :method => :delete %>
           </section>
           
           <section id="instructions">

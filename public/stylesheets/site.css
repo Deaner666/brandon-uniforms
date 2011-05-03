@@ -9,15 +9,16 @@ Notes:
 
 /*
 Colours:
-Background Pale Grey:     #ebebeb
-Nav Bar / Sidebar Grey:   #d8d8d8
-Background Dark Charcoal: #222
-Bright Red:               #de4337
-Link Green:               #008A29
-Highlight Yellow:         #ffd92a
+Background Pale Grey:     	#ebebeb
+Nav Bar / Sidebar Mid Grey:	#d8d8d8
+Medium Dark Grey:						#cacaca
+Background Dark Charcoal: 	#222
+Bright Red:               	#de4337
+Link Green:               	#008A29
+Highlight Yellow:         	#ffd92a
 
 Margins:
-Bottom margin to space elements vetically, should be 24px to maintain the baseline grid.
+Bottom margin to space elements vertically should be 24px to maintain the baseline grid.
 */
 
 /*
@@ -64,8 +65,16 @@ body { background: #ebebeb; }
 	border-radius: 20px; -moz-border-radius: 20px;
 	-webkit-border-radius: 20px; -khtml-border-radius: 20px;
 }
-#sidebar p, #sidebar h1 { margin-left: 15px; margin-right: 15px; }
+#sidebar p, #sidebar h1, #sidebar ul, #sidebar form { margin-left: 15px; margin-right: 15px; }
 #sidebar h1 { font-size: 20px; }
+#order-summary {
+	background: #cacaca; margin: 0 15px 24px 15px; padding: 15px;
+	border-radius: 15px; -moz-border-radius: 15px;
+	-webkit-border-radius: 15px; -khtml-border-radius: 15px;
+}
+#order-summary li { list-style: none; }
+#order-summary li.even { background: #aaa; margin-left: -5px; margin-right: -5px; padding: 0 5px 0 5px; }
+#order-summary li.odd { background: #bababa; margin-left: -5px; margin-right: -5px; padding: 0 5px 0 5px; }
 
 /* The page footer */
 #page-footer {
