@@ -118,6 +118,11 @@ form.formtastic fieldset > ol > li p.inline-hints { margin:0.5em 0 0 55%; }
 
 form.button_to { margin-bottom: 24px; }
 
+/* For styling the list of products */
+.product-entry { margin-bottom: 24px; }
+.product-entry h1 { font-size: 1.2em; width: 200px; margin-bottom: 0; }
+.product-entry input { width: 30px; }
+
 /*
 Miscellaneous Styles
 */

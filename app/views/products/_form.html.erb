@@ -1,6 +1,8 @@
-<%= label_tag :product_id, product.name %>
-<%= hidden_field_tag :product_id, product.id %>
-<%= hidden_field_tag :order_id, @order.id %>
-<%= label_tag :quantity, "Quantity" %>
-<%= text_field_tag :quantity, 1 %>
-<%= submit_tag "Add to order" %>
+<article class="product-entry">
+  <h1><%= label_tag :product_id, product.name %></h1>
+  <%= hidden_field_tag :product_id, product.id %>
+  <%= hidden_field_tag :order_id, @order.id %>
+  <%= label_tag :quantity, "Quantity" %>
+  <%= text_field_tag :quantity, 1 %>
+  <%= primary_add_positive_pill_button_tag "Add to order" %>
+</article>
