@@ -2,15 +2,15 @@
 
 <% for product in @products do %>
   <% line_item = @order.has_product?(product) # returns false or the line_item if it exists %>
-  <% if line_item %>
+  <% if line_item != false %>
     <!-- product has already been added to the cart, update existing line_item -->
     <%= form_tag line_item_path(line_item), :method => :put do %>
-      <%= render :partial => 'form', :locals => { :product => product, :qty => line_item.quantity } %>
+      <%= render :partial => 'form', :locals => { :product => product } %>
     <% end %>
   <% else %>
     <!-- product is not already in the cart, create new line_item -->
     <%= form_tag line_items_path, :method => :post do %>
-      <%= render :partial => 'form', :locals => { :product => product} %>
+      <%= render :partial => 'form', :locals => { :product => product } %>
     <% end %>
   <% end %>
 <% end %>

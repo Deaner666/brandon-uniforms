@@ -12,7 +12,12 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @li.save
-        format.html { redirect_to(root_path, :notice => @li.product.name + ' was successfully added.') }
+        format.html do
+          redirect_to(
+            root_path,
+            :notice => @li.product.name + ' successfully added to order. <a href="' + edit_order_path(@li.order) + '">View order</a>'
+          )
+        end
         format.xml  { render :xml => @li, :status => :created, :location => @li }
       else
         format.html { redirect_to(root_path, :alert => "There was a problem adding " + @li.product.name + " to your order.") }
@@ -27,13 +32,18 @@ class LineItemsController < ApplicationController
     @li = LineItem.find(params[:id])
     @li.product_id = params[:product_id]
     @li.order_id = params[:order_id]
-    @li.quantity = params[:quantity]
+    @li.quantity += params[:quantity].to_i
     respond_to do |format|
       if @li.save
-        format.html { redirect_to(root_path, :notice => 'Order was successfully updated.') }
+        format.html do
+          redirect_to(
+            root_path,
+            :notice => @li.product.name + ' successfully added to order. <a href="' + edit_order_path(@li.order) + '">View order</a>'
+          )
+        end
         format.xml  { head :ok }
       else
-        format.html { redirect_to(root_path, :alert => 'Sorry, there was a problem updating your order.') }
+        format.html { redirect_to(root_path, :alert => "There was a problem adding " + @li.product.name + " to your order.") }
         format.xml  { render :xml => @li.errors, :status => :unprocessable_entity }
       end
     end
