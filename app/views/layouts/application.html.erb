@@ -87,9 +87,10 @@
             </ul>
             <p><strong>Order Total: <%= format_price(@order.total) %></strong></p>
             <%= button_group do %>
-              <%= edit_pill_button_link_to "Edit your order", edit_order_path(@order) %>
-              <%= negative_trash_pill_button_link_to "Reset your order", order_path(@order), :method => :delete %>
+              <%= primary_approve_pill_button_link_to "Confirm order", order_path(@order) %>
+              <%= edit_pill_button_link_to "Edit order", edit_order_path(@order) %>
             <% end %>
+            <%= negative_trash_pill_button_link_to "Reset order", order_path(@order), :method => :delete %>
           </section>
           
           <section id="instructions">
