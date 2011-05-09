@@ -1,11 +1,12 @@
 class OrdersController < ApplicationController  
   
+  before_filter :find_order
+  
   # GET /orders/1
   # GET /orders/1.xml
-  def show
-    @title = "Order summary"
-    @order = Order.find(params[:id], :include => :line_items)
-  end
+  # def show
+  #     @title = "Order summary"
+  #   end
   
   # GET /orders/new
   # GET /orders/new.xml
@@ -49,19 +50,18 @@ class OrdersController < ApplicationController
   #     end
   #   end
   
-  # def edit
-  #     @title = "Amend Order"
-  #     @order = Order.find(params[:id])
-  #     ids = []
-  #     for li in @order.line_items do
-  #       ids << li.product_id
-  #     end
-  #     for product in Product.all
-  #       unless ids.include?(product.id)
-  #         @order.line_items.build(:product_id => product.id, :product_name => Product.find(product.id).name)
-  #       end
-  #     end
-  #   end
+  def edit
+      @title = "Your Order"
+      ids = []
+      for li in @order.line_items do
+        ids << li.product_id
+      end
+      for product in Product.all
+        unless ids.include?(product.id)
+          @order.line_items.build(:product_id => product.id, :product_name => Product.find(product.id).name)
+        end
+      end
+    end
   
   # def update
   #     @order = Order.find(params[:id])

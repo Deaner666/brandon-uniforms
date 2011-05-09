@@ -123,6 +123,24 @@ form.button_to { margin-bottom: 24px; }
 .product-entry h1 { font-size: 1.2em; width: 200px; margin-bottom: 0; }
 .product-entry input { width: 30px; }
 
+/* For styling the order-edit form */
+#order-edit {  }
+#order-edit .details { 
+	background: #cacaca; margin: 0 0 24px 0; padding: 15px;
+	border-radius: 15px; -moz-border-radius: 15px;
+	-webkit-border-radius: 15px; -khtml-border-radius: 15px;
+}
+#order-edit table { width: 100%; }
+#order-edit table tr.even { background: #aaa; }
+#order-edit table tr.odd { background: #bababa; }
+#order-edit table td { padding: 5px; }
+#order-edit table td.product-name { width: 50%; }
+#order-edit table td.product-quantity { width: 30%; text-align: right; }
+#order-edit table td.product-quantity input { width: 30px; }
+#order-edit table td.product-quantity button { display: inline; }
+#order-edit table td.product-price { width: 20%; text-align: right; }
+#order-edit .order-total { margin-bottom: 0; text-align: right; }
+
 /*
 Miscellaneous Styles
 */

@@ -1,3 +1,30 @@
 <h1><%= @title %></h1>
 
-<%= render 'form' %>
+<section id="order-edit">
+  <div class="details">
+    <table>
+      <% for li in @order.line_items %>
+        <% if li.quantity != 0 && li.quantity != nil %>
+          <tr class="<%= cycle('even', 'odd') %>">
+            <td class="product-name"><%= li.product.name %></td>
+            <td class="product-quantity">
+              <%= form_tag line_item_path(li), :method => :put do %>
+                <%= hidden_field_tag :product_id, li.product_id %>
+                <%= hidden_field_tag :order_id, li.order_id %>
+                <%= text_field_tag :quantity, li.quantity %>
+                <%= loop_pill_button_tag "Update" %>
+              <% end %>
+            </td>
+            <td class="product-price"><%= format_price(li.total) %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+    <p class="order-total"><strong>Order Total: <%= format_price(@order.total) %></strong></p>
+  </div>
+  <%= button_group do %>
+    <%= primary_approve_pill_button_link_to "Confirm order", order_path(@order) %>
+    <%= add_pill_button_link_to "Continue shopping", products_path %>
+    <%= negative_trash_pill_button_link_to "Reset order", order_path(@order), :method => :delete %>
+  <% end %>
+</section>

@@ -32,7 +32,11 @@ class LineItemsController < ApplicationController
     @li = LineItem.find(params[:id])
     @li.product_id = params[:product_id]
     @li.order_id = params[:order_id]
-    @li.quantity += params[:quantity].to_i
+    if request.referer.include? "edit"
+      @li.quantity = params[:quantity].to_i
+    else
+      @li.quantity += params[:quantity].to_i
+    end
     respond_to do |format|
       if @li.save
         format.html do
