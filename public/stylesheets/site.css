@@ -105,6 +105,7 @@ Page Specific Styles
 */
 
 /* For styling the Formtastic new order form */
+form.formtastic button, form.formtastic p, form.formtastic ul { margin-bottom: 24px; }
 /*form.formtastic input.branch { width: 150px; }
 form.formtastic input.contact { width: 150px; }
 form.formtastic input.quantity { width: 30px; }
@@ -140,6 +141,18 @@ form.button_to { margin-bottom: 24px; }*/
 #order-edit table td.product-quantity button { display: inline; }
 #order-edit table td.product-price { width: 20%; text-align: right; }
 #order-edit .order-total { margin-bottom: 0; text-align: right; }
+
+/* For styling the order summary section of the final submit order form */
+#order-details {
+	background: #cacaca; margin: 0 0 24px 0; padding: 15px;
+	border-radius: 15px; -moz-border-radius: 15px;
+	-webkit-border-radius: 15px; -khtml-border-radius: 15px;
+}
+#order-details li { list-style: none; margin-bottom: 6px; }
+#order-details li.even { background: #aaa; margin-left: -5px; margin-right: -5px; padding: 0 5px 0 5px; }
+#order-details li.odd { background: #bababa; margin-left: -5px; margin-right: -5px; padding: 0 5px 0 5px; }
+#order-details strong { font-weight: bold; }
+.extra-controls { margin-bottom: 24px; }
 
 /*
 Miscellaneous Styles

@@ -1,43 +1,48 @@
 <h1><%= @title %></h1>
 
 <%= semantic_form_for @order do |f| %>
-
-  <h2>Branch details</h2>
-  <%= f.inputs do %>
-    <%= f.input :branch, :label => "Cost Centre",
-                         :as => :select, :collection => Order::BRANCHES,
-                         :required => true,
-                         :hint => "Your branch \"Cost Centre\" reference number",
-                         :input_html => { :class => "branch" } %>
-    <%= f.input :contact, :label => "Contact name",
-                          :required => true,
-                          :hint => "Your name, in case we need to contact you",
-                          :input_html => { :class => "contact", :value => "" } %>
-  <% end %>
   
-  <h2>Order details</h2>
-  <ul>
-    <% for li in @order.line_items %>
-      <% unless li.quantity == 0 %>
-        <li>
-          <%= li.quantity %> x
-          <%= li.product.name %> @
-          <%= format_price(li.product.price) %> each =
-          <%= format_price(li.total) %>
-        </li>
-      <% end %>
+  <section id="branch-details">
+    <h2>Branch details</h2>
+    <%= f.inputs do %>
+      <%= f.input :branch, :label => "Cost Centre",
+                           :as => :select, :collection => Order::BRANCHES,
+                           :required => true,
+                           :hint => "Your branch \"Cost Centre\" reference number",
+                           :input_html => { :class => "branch" } %>
+      <%= f.input :contact, :label => "Contact name",
+                            :required => true,
+                            :hint => "Your name, in case we need to contact you",
+                            :input_html => { :class => "contact", :value => "" } %>
     <% end %>
-  </ul>
-  <p><strong>Order Total: <%= format_price(@order.total) %></strong></p>
+  </section>
+  
+  <section id="order-details">
+    <h2>Order details</h2>
+    <ul>
+      <% for li in @order.line_items %>
+        <% unless li.quantity == 0 %>
+          <li class="<%= cycle('even', 'odd') %>">
+            <%= li.quantity %> x
+            <%= li.product.name %> @
+            <%= format_price(li.product.price) %> each =
+            <%= format_price(li.total) %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+    <p><strong>Order Total: <%= format_price(@order.total) %></strong></p>
+  </section>
   
   <%= big_primary_pill_approve_button_tag "Confirm and send order",
                 order_path(@order),
                 :method => :put %>
-  <p>
+  <div class="extra-controls">
     <%= button_group do %>
       <%= edit_pill_button_link_to "Edit order", edit_order_path(@order) %>
       <%= add_pill_button_link_to "Continue shopping", products_path %>
+      <%= negative_trash_pill_button_link_to "Reset order", order_path(@order), :method => :delete %>
     <% end %>
-  </p>
+  </div>
                 
 <% end %>
