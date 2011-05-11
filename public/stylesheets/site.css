@@ -105,7 +105,7 @@ Page Specific Styles
 */
 
 /* For styling the Formtastic new order form */
-form.formtastic input.branch { width: 150px; }
+/*form.formtastic input.branch { width: 150px; }
 form.formtastic input.contact { width: 150px; }
 form.formtastic input.quantity { width: 30px; }
 form.formtastic fieldset > ol > li label { display:block; width:55%; float:left; padding-top:.2em; }
@@ -116,7 +116,7 @@ form.formtastic fieldset > ol > li ul.errors { margin:0.5em 0 0 55%; }
 form.formtastic .price { float: right; }
 form.formtastic fieldset > ol > li p.inline-hints { margin:0.5em 0 0 55%; }
 
-form.button_to { margin-bottom: 24px; }
+form.button_to { margin-bottom: 24px; }*/
 
 /* For styling the list of products */
 .product-entry { margin-bottom: 24px; }

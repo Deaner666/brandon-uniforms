@@ -4,9 +4,9 @@ class OrdersController < ApplicationController
   
   # GET /orders/1
   # GET /orders/1.xml
-  # def show
-  #     @title = "Order summary"
-  #   end
+  def show
+    @title = "Order summary"
+  end
   
   # GET /orders/new
   # GET /orders/new.xml
@@ -63,18 +63,23 @@ class OrdersController < ApplicationController
       end
     end
   
-  # def update
-  #     @order = Order.find(params[:id])
-  #     respond_to do |format|
-  #       if @order.update_attributes(params[:order])
-  #         format.html { redirect_to(order_path(@order), :notice => 'Order was successfully updated.') }
-  #         format.xml  { head :ok }
-  #       else
-  #         format.html { render :action => "edit" }
-  #         format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
-  #       end
-  #     end
-  #   end
+  # PUT /orders/1
+  # PUT /orders/1.xml
+  def update
+      @order = Order.find(params[:id])
+      respond_to do |format|
+        if @order.update_attributes(params[:order])
+          format.html do
+            OrderMailer.order_email(@order).deliver
+            redirect_to(products_path, :notice => 'Order successfully submitted.')
+          end
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "show" }
+          format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
+        end
+      end
+    end
   
   # DELETE /orders/1
   # DELETE /orders/1.xml
@@ -92,14 +97,14 @@ class OrdersController < ApplicationController
     end
   end
   
-  def send_order
-    if params[:id]
-      @order = Order.find(params[:id])
-      OrderMailer.order_email(@order).deliver
-      redirect_to(new_order_path, :notice => "Order was sent successfully.")
-    else
-      redirect_to(new_order_path, :error => "We're sorry, something went wrong.")
-    end
-  end
+  # def send_order
+  #   if params[:id]
+  #     @order = Order.find(params[:id])
+  #     OrderMailer.order_email(@order).deliver
+  #     redirect_to(new_order_path, :notice => "Order was sent successfully.")
+  #   else
+  #     redirect_to(new_order_path, :error => "We're sorry, something went wrong.")
+  #   end
+  # end
   
 end

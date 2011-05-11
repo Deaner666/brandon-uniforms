@@ -15,7 +15,7 @@ class LineItemsController < ApplicationController
         format.html do
           redirect_to(
             root_path,
-            :notice => @li.product.name + ' successfully added to order. <a href="' + edit_order_path(@li.order) + '">View order</a>'
+            :notice => @li.product.name + ' successfully added to order. <a href="' + edit_order_path(@li.order) + '">Edit order</a>'
           )
         end
         format.xml  { render :xml => @li, :status => :created, :location => @li }
@@ -42,7 +42,7 @@ class LineItemsController < ApplicationController
         format.html do
           redirect_to(
             root_path,
-            :notice => @li.product.name + ' successfully added to order. <a href="' + edit_order_path(@li.order) + '">View order</a>'
+            :notice => @li.product.name + ' successfully added to order. <a href="' + edit_order_path(@li.order) + '">Edit order</a>'
           )
         end
         format.xml  { head :ok }
