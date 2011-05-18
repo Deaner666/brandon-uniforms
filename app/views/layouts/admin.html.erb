@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title><%= global_title %></title>
+    <meta charset="utf-8">
+    <meta name="author" content="David Dean" />
+    <meta name="description" content="Brandon Hire uniform ordering system" />
+    <meta name="keywords" content="" />
+    <!-- <link rel="shortcut icon" href="/images/favicon.png" type="image/gif" /> -->
+    <!-- <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/basic.css" media="screen, handheld" />
+    <link rel="stylesheet" href="/stylesheets/mobile.css" media="screen and (min-width: 320px) and (max-width: 640px), handheld" />
+    <link rel="stylesheet" href="/stylesheets/desktop.css" media="screen and (min-width: 640px)" />
+    <!--[if lte IE 9]>
+      <link rel="stylesheet" href="/stylesheets/ie.css" media="screen" />
+    <![endif]-->
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/stylesheets/formtastic.css" media="screen, handheld" />
+    <link rel="stylesheet" href="/stylesheets/css3buttons/css3-github-buttons.css" media="screen, handheld" />
+    <link rel="stylesheet" href="/stylesheets/typography.css" media="screen, handheld" />
+    <link rel="stylesheet" href="/stylesheets/site.css" media="screen, handheld" />
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+
+  <body id="<%= body_id %>">
+    
+    <!-- Top bar showing login information -->
+    <aside id="login-bar" class="container">
+      <div class="row">
+        <div class="twelvecol">
+          <p></p>
+        </div>
+      </div>
+    </aside>
+    
+    <!-- Masthead title bar -->
+    <header id="masthead" class="container">
+      <div class="row">
+        <div class="twelvecol">
+          <h1>Brandon Hire: Order Uniforms</h1>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Main site navigation -->
+    <nav id="main-nav" class="container">
+      <div class="row">
+        <ul>
+          <li><%= link_to "Back to main site", root_path %> |</li>
+          <li><%= link_to "Products", "#" %> |</li>
+          <li><%= link_to "Sizes", admin_sizes_path %></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <!-- Rails flash -->
+    <section id="page" class="container">
+      <div class="row">
+        <div class="content eightcol">
+          <% if notice %>
+            <div id="notice"><%= raw notice %></div>
+          <% end %>
+          <% if alert %>
+            <div id="alert"><%= raw alert %></div>
+          <% end %>
+          
+          <%= yield %>
+        </div>
+        
+        <aside id="sidebar" class="fourcol last">
+          <section id="instructions">
+            <h1>Admin</h1>
+            <p>These are the admin pages.</p>
+          </section>
+        </aside>
+      </div>
+    </section>
+    
+    <footer id="page-footer" class="container">
+      <div class="row">
+        <section id="copyright-info" class="fourcol">
+          <header>Copyright &copy; <%= Date.today.year %> Monsoon Marketing Ltd.</header>
+          <p><%= link_to "www.monsoonmarketing.co.uk", "http://www.monsoonmarketing.co.uk" %></p>
+        </section>
+        <section id="terms-and-conditions" class="fourcol">
+          <header>Website designed by</header>
+          <p><%= link_to "www.moortor-design.co.uk", "http://www.moortor-design.co.uk" %></p>
+        </section>
+        <section id="contact-details" class="fourcol last">
+          <header>Contact Us</header>
+          <p><%= mail_to "info@monsoonmarketing.co.uk", "info@monsoonmarketing.co.uk" %></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+
+</html>

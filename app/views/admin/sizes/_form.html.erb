@@ -1,4 +1,4 @@
-<%= form_for(@size) do |f| %>
+<%= form_for([:admin, @size]) do |f| %>
   <% if @size.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@size.errors.count, "error") %> prohibited this size from being saved:</h2>

@@ -1,5 +1,4 @@
 BrandonApp::Application.routes.draw do
-  resources :sizes
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -18,7 +17,9 @@ BrandonApp::Application.routes.draw do
     resources :products    
   end
   match '/orders/:id/send' => 'orders#send_order', :as => :send
-  
+  namespace :admin do
+    resources :sizes
+  end
   resources :products
   resources :line_items
   

@@ -1,4 +1,7 @@
-class SizesController < ApplicationController
+class Admin::SizesController < ApplicationController
+  
+  layout "admin"
+  
   # GET /sizes
   # GET /sizes.xml
   def index
@@ -44,7 +47,7 @@ class SizesController < ApplicationController
 
     respond_to do |format|
       if @size.save
-        format.html { redirect_to(@size, :notice => 'Size was successfully created.') }
+        format.html { redirect_to([:admin, @size], :notice => 'Size was successfully created.') }
         format.xml  { render :xml => @size, :status => :created, :location => @size }
       else
         format.html { render :action => "new" }
@@ -60,7 +63,7 @@ class SizesController < ApplicationController
 
     respond_to do |format|
       if @size.update_attributes(params[:size])
-        format.html { redirect_to(@size, :notice => 'Size was successfully updated.') }
+        format.html { redirect_to([:admin, @size], :notice => 'Size was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,7 +79,7 @@ class SizesController < ApplicationController
     @size.destroy
 
     respond_to do |format|
-      format.html { redirect_to(sizes_url) }
+      format.html { redirect_to(admin_sizes_url) }
       format.xml  { head :ok }
     end
   end
