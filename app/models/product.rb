@@ -15,6 +15,7 @@ class Product < ActiveRecord::Base
   
   has_many :line_items
   has_many :orders, :through => :line_items
+  has_and_belongs_to_many :sizes
   
   validates :name,       :presence => true
   validates :stock_code, :presence => true
