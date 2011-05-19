@@ -23,7 +23,6 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 gem 'formtastic', '~> 1.1.0'
-gem 'typus', :git => 'git://github.com/fesplugas/typus.git'
 gem 'css3buttons'
 
 # Bundle gems for the local environment. Make sure to
