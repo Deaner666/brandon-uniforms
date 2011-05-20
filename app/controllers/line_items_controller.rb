@@ -9,7 +9,8 @@ class LineItemsController < ApplicationController
     @li.product_id = params[:product_id]
     @li.order_id = params[:order_id]
     @li.quantity = params[:quantity]
-
+    params[:size] != nil && params[:size] != "" ? @li.size = params[:size] : @li.size = nil
+    
     respond_to do |format|
       if @li.save
         format.html do

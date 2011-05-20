@@ -2,6 +2,10 @@
   <h1><%= label_tag :product_id, product.name %></h1>
   <%= hidden_field_tag :product_id, product.id %>
   <%= hidden_field_tag :order_id, @order.id %>
+  <% if product.sizes.count > 0 %>
+    <%= label_tag :size, "Size" %>
+    <%= select_tag :size, options_for_select(product.sizes.collect{ |p| p.name }) %>
+  <% end %>
   <%= label_tag :quantity, "Quantity" %>
   <%= text_field_tag :quantity, 1 %>
   <%= primary_add_pill_button_tag "Add to order" %>

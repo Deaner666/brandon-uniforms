@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110201220504
+# Schema version: 20110520200807
 #
 # Table name: line_items
 #
@@ -10,6 +10,7 @@
 #  created_at   :datetime
 #  updated_at   :datetime
 #  product_name :string(255)
+#  size         :string(255)
 #
 
 class LineItem < ActiveRecord::Base
@@ -17,8 +18,6 @@ class LineItem < ActiveRecord::Base
   belongs_to :order
   belongs_to :product
   
-  #validates :order_id,   :presence => true
-  #validates :product_id, :presence => true
   validates :quantity,   :numericality => {
                          :only_integer => true,
                          :greater_than_or_equal_to => 0,

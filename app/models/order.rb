@@ -207,15 +207,4 @@ class Order < ActiveRecord::Base
     self.line_items.inject(0) {|x, li| x + li.total }
   end
   
-  # Check to see if the given product is amongst the order's line_items. Returns the line_item or false
-  def has_product?(product)
-    result = false
-    for line_item in self.line_items
-      if line_item.product_id == product.id
-        result = line_item
-      end
-    end
-    return result
-  end
-  
 end

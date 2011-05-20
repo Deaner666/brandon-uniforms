@@ -6,11 +6,12 @@
       <% for li in @order.line_items %>
         <% if li.quantity != 0 && li.quantity != nil %>
           <tr class="<%= cycle('even', 'odd') %>">
-            <td class="product-name"><%= li.product.name %></td>
+            <td class="product-name"><%= li.product.name %> <%= "(#{li.size})" if li.size %></td>
             <td class="product-quantity">
               <%= form_tag line_item_path(li), :method => :put do %>
                 <%= hidden_field_tag :product_id, li.product_id %>
                 <%= hidden_field_tag :order_id, li.order_id %>
+                <%= hidden_field_tag(:size, li.size) if li.size %>
                 <%= text_field_tag :quantity, li.quantity %>
                 <%= loop_pill_button_tag "Update" %>
               <% end %>

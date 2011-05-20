@@ -79,7 +79,9 @@
                 <% if li.quantity != 0 && li.quantity != nil %>
                   <li class="<%= cycle('even', 'odd') %>">
                     <%= li.quantity %> x
-                    <%= li.product.name %> -
+                    <%= li.product.name %>
+                    <%= "(#{li.size})" if li.size %>
+                     -
                     <%= format_price(li.total) %>
                   </li>
                 <% end %>

@@ -25,7 +25,7 @@
         <% unless li.quantity == 0 %>
           <li>
             <%= li.quantity %> x
-            <%= li.product.name %> @
+            <%= li.product.name %> <%= "(#{li.size})" if li.size %> @
             &pound;<%= sprintf("%.02f", li.product.price / 100.0) %> each =
             &pound;<%= sprintf("%.02f", li.total / 100.0) %>
           </li>
