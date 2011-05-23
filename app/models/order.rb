@@ -207,4 +207,30 @@ class Order < ActiveRecord::Base
     self.line_items.inject(0) {|x, li| x + li.total }
   end
   
+  # If a combination of product and size already exists amongst an order's line_items, return true,
+  # else return false
+  def has_line_item?(product_id, size)
+    bool = false
+    for li in self.line_items
+      if li.product_id == product_id && li.size == size
+        bool = true
+      end
+    end
+    return bool
+  end
+  
+  # Return an array with similar line_items (same product and same size) merged
+  def line_items_crunched
+    # lis_crunched = []
+    # for li in self.line_items
+    #   lis_crunched.find(lis_crunched << li){ |lic| lic.product_id == li.product_id && lic.size == li.size }.quantity += li.quantity if li.quantity
+    # end
+    
+    # new_array = array.map {|v,w| [v,w, array.select {|b,c|
+    #    b == v && c == w }.inject(0){|m,b| m + b.last}]}.uniq
+    
+    self.line_items.group(["product_id", "size"])
+    
+  end
+  
 end

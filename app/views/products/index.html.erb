@@ -2,7 +2,6 @@
 
 <% for product in @products do %>
 
-  <!-- product is not already in the cart, create new line_item -->
   <%= form_tag line_items_path, :method => :post do %>
     <%= render :partial => 'form', :locals => { :product => product } %>
   <% end %>
