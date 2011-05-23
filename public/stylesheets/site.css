@@ -120,9 +120,11 @@ form.formtastic fieldset > ol > li p.inline-hints { margin:0.5em 0 0 55%; }
 form.button_to { margin-bottom: 24px; }*/
 
 /* For styling the list of products */
-.product-entry { margin-bottom: 24px; }
-.product-entry h1 { font-size: 1.2em; width: 200px; margin-bottom: 0; }
+.product-entry table { margin-bottom: 24px; padding-bottom: 12px; border-bottom: #cacaca 1px solid; }
+.product-entry th { font-size: 1.2em; text-align: left; font-family: Georgia, "Times New Roman", serif; }
 .product-entry input { width: 30px; }
+.product-entry td.image { background: #d8d8d8; width: 75px; height: 75px; }
+.product-entry td.quantity, .product-entry td.add-button { padding-left: 10px; }
 
 /* For styling the order-edit form */
 #order-edit {  }
