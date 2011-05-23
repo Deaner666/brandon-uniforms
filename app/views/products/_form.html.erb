@@ -7,6 +7,7 @@
           &nbsp; - &nbsp;
           <%= select_tag :size, options_for_select(product.sizes.collect{ |p| p.name }) %>
         <% end %>
+        - <%= format_price product.price if product.price %>
       </th>
     </tr>
     <%= hidden_field_tag :product_id, product.id %>
