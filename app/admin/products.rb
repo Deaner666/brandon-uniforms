@@ -4,7 +4,7 @@ ActiveAdmin.register Product do
     f.inputs "Product Details" do
       f.input :name
       f.input :stock_code
-      f.input :price, :hint => "In pence"
+      f.input :price, :hint => "In pence. ie. 795 = &pound;7.95"
       f.input :sizes, :as => :select, :hint => "You can select multiple sizes"
     end
     f.buttons
