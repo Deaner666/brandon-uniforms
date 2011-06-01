@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110201220504
+# Schema version: 20110601171954
 #
 # Table name: orders
 #
@@ -8,6 +8,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  contact    :string(255)
+#  job_title  :string(255)
 #
 
 class Order < ActiveRecord::Base
@@ -20,6 +21,7 @@ class Order < ActiveRecord::Base
   
   validates :branch, :presence => true
   validates :contact, :presence => true
+  validates :job_title, :presence => true
   
   BRANCHES = [
     "002 - BRISTOL MAIN",

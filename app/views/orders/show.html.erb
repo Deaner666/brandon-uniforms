@@ -14,6 +14,9 @@
                             :required => true,
                             :hint => "Your name, in case we need to contact you",
                             :input_html => { :class => "contact", :value => "" } %>
+      <%= f.input :job_title, :label => "Job title",
+                              :required => true,
+                              :input_html => { :class => "job-title" } %>
     <% end %>
   </section>
   
