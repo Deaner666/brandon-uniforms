@@ -16,6 +16,8 @@ Background Dark Charcoal: 	#222
 Bright Red:               	#de4337
 Link Green:               	#008A29
 Highlight Yellow:         	#ffd92a
+Brandon Blue:								#14397d
+Brandon Orange:							#
 
 Margins:
 Bottom margin to space elements vertically should be 24px to maintain the baseline grid.
@@ -177,3 +179,6 @@ Miscellaneous Styles
 	margin-left: 12px; margin-top: 6px; float: left;
 }
 .fancy-button img { float: right; margin-top: 6px; margin-right: 6px; }
+
+.blue { color: #14397d; }
+.orange { color: #ea9439; }

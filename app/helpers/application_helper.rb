@@ -2,7 +2,7 @@ module ApplicationHelper
   
   # Return a title on a per-page basis.
   def global_title
-    base_title = "Brandon Hire: Order Drinks"
+    base_title = "Brandon Hire Work Ware"
     @title ? base_title + " | " + @title : base_title
   end
   
