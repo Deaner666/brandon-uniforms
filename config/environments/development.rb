@@ -16,6 +16,12 @@ BrandonApp::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
+  
+  # Setup for use with mailcatcher. Delivered mail can be seen at http://localhost:1080
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address => "localhost",
+    :port => 1025 }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log

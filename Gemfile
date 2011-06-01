@@ -26,6 +26,7 @@ group :development do
   gem 'rspec-rails', '2.3.0'
   gem 'annotate-models', '1.0.4'
   gem 'ruby-debug19'
+  gem 'mailcatcher'
 end
 
 group :test do
