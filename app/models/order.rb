@@ -201,7 +201,8 @@ class Order < ActiveRecord::Base
     "903 - MANSFIELD",
     "904 - NOTTINGHAM",
     "905 - COVENTRY",
-    "908 - ALFRETON"
+    "908 - ALFRETON",
+    "950 - HEAD OFFICE"
   ]
   
   # Find the total cost of an order by summing the cost of its line_items
